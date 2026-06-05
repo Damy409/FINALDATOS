@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard Analitico de Supermercado</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p>FastAPI + Databricks + Python</p>
+        <h1>Analisis de Transacciones de Supermercado</h1>
+      </div>
+      <div class="actions">
+        <button id="sampleBtn" type="button">Procesar datos de ejemplo</button>
+        <label class="upload">
+          <input id="csvInput" type="file" accept=".csv,text/csv" />
+          Cargar CSV
+        </label>
+      </div>
+    </header>
+
+    <main>
+      <section id="status" class="notice">Conectando con el backend...</section>
+
+      <section class="layout">
+        <aside class="panel">
+          <h2>Fuente</h2>
+          <dl>
+            <div><dt>Archivo</dt><dd id="sourceName">-</dd></div>
+            <div><dt>Registros validos</dt><dd id="rows">-</dd></div>
+            <div><dt>Fechas</dt><dd id="dates">-</dd></div>
+          </dl>
+
+          <h2>Recomendador</h2>
+          <label for="customerSelect">Cliente</label>
+          <select id="customerSelect"></select>
+          <div id="customerRecs" class="recs"></div>
+
+          <label for="productSelect">Producto</label>
+          <select id="productSelect"></select>
+          <div id="productRecs" class="recs"></div>
+        </aside>
+
+        <section class="content">
+          <section class="kpis">
+            <article><span>Total unidades</span><strong id="totalUnits">0</strong></article>
+            <article><span>Transacciones</span><strong id="totalTransactions">0</strong></article>
+            <article><span>Clientes</span><strong id="totalCustomers">0</strong></article>
+            <article><span>Productos</span><strong id="totalProducts">0</strong></article>
+          </section>
+
+          <section class="grid">
+            <article class="card"><h2>Top 10 productos</h2><div id="topProducts" class="chart"></div></article>
+            <article class="card"><h2>Top 10 clientes</h2><div id="topCustomers" class="chart"></div></article>
+          </section>
+
+          <section class="grid">
+            <article class="card"><h2>Dias pico de compra</h2><div id="dailyPeaks" class="chart"></div></article>
+            <article class="card"><h2>Categorias por volumen relativo</h2><div id="categories" class="chart"></div></article>
+          </section>
+
+          <section class="grid">
+            <article class="card"><h2>Serie de tiempo semanal</h2><div id="weekly" class="chart"></div></article>
+            <article class="card"><h2>Boxplot por categoria</h2><div id="boxplot" class="chart"></div></article>
+          </section>
+
+          <section class="grid">
+            <article class="card"><h2>Heatmap de correlacion</h2><div id="heatmap" class="heatmap"></div></article>
+            <article class="card"><h2>Segmentacion K-Means</h2><div id="clusters" class="chart"></div></article>
+          </section>
+
+          <section class="card">
+            <h2>Interpretacion del analisis</h2>
+            <div id="insights" class="insights"></div>
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
