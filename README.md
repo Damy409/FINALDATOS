@@ -11,7 +11,6 @@ Proyecto funcional construido con:
 
 ## Como ejecutar el programa
 
-
 Se van a utilizar los siguientes comandos en la terminal:
 
 ```bash
