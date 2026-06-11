@@ -4,8 +4,6 @@
 
 Se construyo una solucion completa para analizar transacciones de supermercado usando Python, FastAPI y Databricks.
 
-La aplicacion ya no funciona como una pagina aislada. Ahora tiene un backend real:
-
 - El usuario abre un dashboard web.
 - El dashboard consume una API en FastAPI.
 - FastAPI procesa los datos con Python.
